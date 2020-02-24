@@ -1,0 +1,202 @@
+/* 加入Google fonts Raleway分別載入字重100,400,700 */
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,400,700&display=swap');
+/*==================== general ====================*/
+
+body {
+    min-height: 1000px;
+    /* 設定背景圖 */
+    background-image: url('../img/cork-repeat.jpg');
+    font-family: 'Raleway', sans-serif;
+}
+
+/* 設定透視 */
+.env {
+    perspective: 1000PX;
+}
+
+.card {
+    width: 600px;
+    margin: 100px auto;
+}
+
+.card>.upper-section,
+.card>.lower-section {
+    padding: 20px 20px;
+    position: relative;
+}
+
+/*==================== fonts ====================*/
+
+* {
+    color: #333;
+}
+
+.dish-name {
+    font-size: 50px;
+    letter-spacing: 8px;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: 100;
+    letter-spacing: 5px;
+    margin: 0
+}
+
+/*==================== upper-section ====================*/
+
+.upper-section {
+    background-color: white;
+    height: 220px;
+    z-index: 5;
+    color: white;
+    /* 設定背景圖 */
+    background-image: url('../img/salmon-steak.jpg');
+    /* 等比例縮放到區域大小 */
+    background-size: cover;
+    /* 預設向後折 */
+    transform: rotateX(20deg);
+    /* 把x軸心調整到元素的底部 */
+    transform-origin: bottom;
+    /* 設定filter屬性控制照片明亮與飽和度 */
+    filter: brightness(1.2) grayscale(100%);
+}
+
+.upper-section .text {
+    margin-top: 80px;
+}
+
+.upper-section * {
+    color: white;
+}
+
+.upper-section p {
+    margin: 0;
+}
+
+.price {
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 100;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    /* 設定預設為透明 */
+    opacity: 0;
+    /* 顯示$在價格前，並顯示貨幣單位於價格後 */
+}
+
+/* 偽元素 */
+.price:before {
+    content: "$";
+    margin-right: 8px;
+}
+
+.price:after {
+    content: "NTD";
+    margin-left: 8px;
+}
+
+/*==================== lower-section ====================*/
+
+.lower-section {
+    background-color: white;
+    z-index: 1;
+    /* 預設向後折 */
+    transform: rotateX(-100deg);
+    transform-origin: top;
+}
+
+.ingredients {
+    padding-left: 0;
+    /* 將預設的ul樣式取消 */
+    list-style: none;
+}
+
+.ingredients>li {
+    font-size: 18px;
+    /* 設定底部的框線 */
+    border-bottom: 1px solid #aaa;
+    /* 設定每個li高度為40px並且垂直置中文字，line-height行高 */
+    height: 40px;
+    line-height: 40px;
+    padding-left: 40px;
+    /* 設定滑鼠游標樣式讓使用者知道是可以點選的，progress等待 */
+    cursor: pointer;
+    /* 有佔據空間，所以要設定relative */
+    position: relative;
+    /* cursor樣式可參考: https://codepen.io/andy19910102/pen/MJavYR */
+}
+
+/* 利用偽元素設計checklist點擊圖樣 */
+.ingredients>li:before {
+    /* 如果要透過偽元素繪製圖形不可省略content */
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 1px solid #aaaaaa;
+    /* 預設是行內元素，無法設定w跟h */
+    display: block;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    border-radius: 4px;
+}
+
+.ingredients>li.done:before {
+    background-image: url('../img/checked.svg');
+    background-repeat: no-repeat;
+    /* 先左右再上下 */
+    background-position: center center;
+}
+
+/*==================== animation ====================*/
+
+/* 設定.card:hover動畫的transition */
+.upper-section,
+.lower-section {
+    transition: all .5s ease-in-out;
+}
+
+/* 設定.card:hover後折回的3D動畫 */
+/* 當卡片被hover的時候，它裡面的upper-section */
+.card:hover>.upper-section,
+.card:hover>.lower-section {
+    transform: rotateX(0deg);
+    filter: brightness(1) grayscale(0%);
+}
+
+/* 設定.card:hover後顯示price */
+/* .card:hover>.upper-section>.text>.price {
+    opacity: 1;
+} */
+.card:hover .price {
+    opacity: 1;
+    margin-top: 8px;
+}
+
+/* 設定手機版的 CSS width < 576px */
+@media(max-width: 576px) {
+
+    /* 只有裝置寬度小於等於576px 才能夠使用的選擇器 */
+    .upper-section,
+    .lower-section {
+        transform: rotateX(0deg);
+        filter: brightness(1) grayscale(0%);
+    }
+
+    .upper-section .price {
+        opacity: 1;
+        margin-top: 8px;
+    }
+
+    .dish-name {
+        font-size: 24px;
+    }
+
+    .card {
+        width: calc(100% -30px);
+        margin: 15px auto;
+    }
+}

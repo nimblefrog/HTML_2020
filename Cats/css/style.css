@@ -1,0 +1,27 @@
+.title {
+    text-align: center;
+}
+
+.card {
+    width: 300px;
+    margin: 50px 15px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card-img {
+    width: 100%;
+}
+
+.card-body {
+    padding: 10px 20px;
+}
+
+.card-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.row {
+    border: 0px;
+}

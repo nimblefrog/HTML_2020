@@ -1,0 +1,345 @@
+/*=============================================
+=                   GENERAL                   =
+=============================================*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div,
+a,
+button,
+section {
+    font-family: 'Microsoft JhengHei', sans-serif;
+}
+
+/* Microsoft JhengHei 微軟正黑體 */
+
+
+/*=============================================
+=                  SELECTORS                  =
+=============================================*/
+
+/* 選擇器一樣，但發生衝突，寫在文件越後面的為主 */
+/* 選擇器不一樣，但發生衝突，以選擇器的階層為主 */
+/* 選擇器階層 #id > .class > tag(h1) > *(畫面上所有元素) */
+/* 選擇器越精確，層級越高 */
+#title1 {
+    color: orange;
+    font-size: 40px;
+    letter-spacing: 8px;
+}
+
+.title {
+    color: steelblue;
+    font-size: 20px;
+}
+
+#title1 {
+    color: red;
+}
+
+/* * 選擇畫面上所有元素，但很容易被覆蓋掉 */
+/* * {
+    color: blue;
+} */
+
+/* 階層選擇器 */
+/* .container>p 選到container裡面"第一層"的p */
+.container>p,
+.container>article>p {
+    background: yellow;
+}
+
+/* .container p 選到.container裡面 "所有的" p */
+.container p {
+    background: yellow;
+}
+
+/* 緊接在.title後面的p標籤 */
+.title+p {
+    background: yellow;
+}
+
+/* 設定p被滑鼠游標接觸後的樣式 */
+p:hover {
+    background: blue;
+}
+
+.container p:hover {
+    background: cornflowerblue;
+}
+
+.container {
+    border: 2px solid black;
+}
+
+.btn {
+    border: none;
+    background: tomato;
+    color: white;
+    padding: 8px 20px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+    /* 漸變 */
+    transition: all .3s ease;
+}
+
+/* 設定元素被點擊後的樣式 */
+.btn:active {
+    background: green;
+}
+
+/* hover通常會跟漸變transition一起使用 */
+.btn:hover {
+    background: blue;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 選到除了.text以外的p */
+/* p:not(.text) {
+    background: yellow;
+} */
+
+/* odd奇數 even偶數 3n三的倍數 4n+1 */
+.list>li:nth-child(odd) {
+    background: yellow;
+}
+
+/*=============================================
+=                  BOX-MODEL                  =
+=============================================*/
+
+
+.box {
+    width: 300px;
+    height: 300px;
+    /* padding or margin: 上 右 下 左; 從上方開始順時針轉一圈 */
+    /* padding or margin or border -top, -bottom, -left, -right */
+    padding: 10px 50px 0 20px;
+    padding-left: 15px;
+    /* margin: 某個數值 auto; =>區塊水平置中 */
+    margin: 40px auto;
+    /* 置中 */
+    margin-left: auto;
+    margin-left: auto;
+    /* margin-bottom: 10px; */
+    background: royalblue;
+    border-bottom: 3px solid black;
+}
+
+.box>* {
+    margin: 0;
+}
+
+/*=============================================
+=                   DISPLAY                   =
+=============================================*/
+
+.display-box {
+    width: 100px;
+    height: 100px;
+    background: tomato;
+    border: 1px solid black;
+}
+
+.block-element {
+    /* 設定成區塊元素 */
+    display: block;
+}
+
+.inline-element {
+    /* 設定成行內文字元素 */
+    display: inline;
+}
+
+.inline-block-element {
+    /* 設定成行內區塊元素 */
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-item {
+    display: block;
+    width: calc(100% / 3);
+    height: calc(100vh - 50px);
+    background: steelblue;
+    border: 1px solid black;
+}
+
+.d-block {
+    display: block;
+}
+
+.d-inline {
+    display: inline;
+}
+
+.d-inline-block {
+    display: inline-block;
+}
+
+.row {
+    border: 1px solid black;
+}
+
+.col {
+    border: 1px solid black;
+}
+
+/*=============================================
+=                  POSITION                   =
+=============================================*/
+.navbar {
+    display: block;
+    width: 100%;
+    height: 50px;
+    background: white;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, .4);
+}
+
+.relative-btn {
+    border: none;
+    height: 40px;
+    color: white;
+    padding: 0 20px;
+    background: #30c39e;
+    border-radius: 6px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .2);
+    /* 定位屬性: top, bottom, left, right, z-index */
+    /* position: static; 預設的定位模式*/
+    position: relative;
+    bottom: 0;
+    transition: all .3s ease-in-out;
+}
+
+.relative-btn:hover {
+    background: #0085ad;
+    bottom: 5px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+}
+
+.outer-box {
+    width: 200px;
+    height: 200px;
+    background: tomato;
+    border: 1px solid black;
+    /* 佔據空間 relative, 不佔據空間 absolute */
+    position: relative;
+}
+
+.inner-box {
+    width: 80px;
+    height: 80px;
+    background: orange;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    /* 重疊時，數字越大的擺上面 */
+    z-index: 1;
+}
+
+.center-box {
+    width: 120px;
+    height: 120px;
+    background: lightgray;
+    position: absolute;
+    /* 置中定位:定位到上層元素中央 */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 2;
+}
+
+.card {
+    width: 300px;
+    border: 1px solid #dbdbdb;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .2);
+}
+
+.card-header>img {
+    display: block;
+}
+
+.card-body {
+    padding: 10px 10px;
+}
+
+.card-body h4,
+.card-body p {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.card-header {
+    position: relative;
+}
+
+.card-btns {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+
+/* 階層選擇器 */
+.card-btns>button {
+    color: white;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    /* 設定成半透明 */
+    opacity: .5;
+    position: relative;
+    bottom: 0;
+    transition: all .3s ease;
+}
+
+.card-btns>button:hover {
+    opacity: 1;
+    bottom: 3px;
+}
+
+nav,
+.nav-left,
+.nav-right {
+    /* border: 1px solid black; */
+}
+
+/* 避免最上面被蓋住 */
+body {
+    padding-top: 60px;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    /*確保元素一直在上層*/
+    z-index: 1000;
+    /* 當元素為flex時，可用下列屬性調整位置，
+    center置中，flex-end靠右 */
+    justify-content: space-between;
+    padding: 10px 15px;
+    background: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+nav a {
+    color: gray;
+    text-decoration: none;
+}
+
+.nav-right a {
+    margin-right: 5px;
+}

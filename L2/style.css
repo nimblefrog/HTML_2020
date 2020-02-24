@@ -1,0 +1,36 @@
+/* 網頁排版必備設定 */
+
+/* *選擇畫面上所有元素 */
+
+* {
+    /* 設定size會比較好設定 */
+    box-sizing: border-box;
+    /* 暫時加上框線，排版時可以參考 */
+    /* border: 1px solid black; */
+}
+
+/* 網頁排版必備設定 end */
+
+.card-list {
+    display: flex;
+    /* 對齊方式 */
+    justify-content: center;
+    /*內部元素寬度不夠自動換行*/
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 300px;
+    /* 上下50, 左右30*/
+    margin: 50px 15px;
+    /* box-shadow: x偏移 y偏移 模糊 顏色; */
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card-img {
+    width: 100%;
+}
+
+.card-body {
+    padding: 10px 20px;
+}

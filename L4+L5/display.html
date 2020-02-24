@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>顯示模式</title>
+    <link rel="stylesheet" href="./css/basic.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <section>
+        <h1>顯示模式</h1>
+        <p>區塊元素(block)代表: h1~h6,div,section,header,p,br,li,ul,ol...</p>
+        <p>行內文字元素(inline)代表: a, span, label</p>
+        <p>行內區塊元素(inline-block)代表: input, img, button</p>
+        <div class="display-box">div</div>
+        <a class="display-box">a</a>
+    </section>
+    <section>
+        <h1>區塊元素(block)</h1>
+        <ul>
+            <li>會換行</li>
+            <li>具有width與height的概念</li>
+        </ul>
+        <div class="display-box block-element">div</div>
+        <a class="display-box block-element">a</a>
+    </section>
+    <section>
+        <h1>行內文字元素(inline)</h1>
+        <p>代表:a, span, label, :before, :after</p>
+        <ul>
+            <li>不會換行</li>
+            <li>不具有width, height</li>
+            <li>大小是依據內部的文字多寡與大小決定</li>
+        </ul>
+        <div class="display-box inline-element">div</div>
+        <a class="display-box inline-element">a</a>
+    </section>
+    <section>
+        <h1>行內區塊元素(inline-block)</h1>
+        <p>代表: img, input, button</p>
+        <ul>
+            <li>不會換行</li>
+            <li>具有width, height的概念</li>
+        </ul>
+
+        <div class="display-box inline-block-element">div</div>
+        <a class="display-box inline-block-element">a</a>
+    </section>
+    <section>
+        <!-- 把元素放到Flex裡面就不會換行 -->
+        <h1>Flex元素(flex)</h1>
+        <p>flex>block</p>
+        <div class="flex">
+            <div class="flex-item"></div>
+            <div class="flex-item"></div>
+            <div class="flex-item"></div>
+        </div>
+        <!-- row -->
+        <div class="row">
+            <!-- col -->
+            <div class="col">
+                <h3>1st col</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta nisi eligendi suscipit cum dolorum
+                    vel ducimus nesciunt molestiae, nihil reprehenderit accusamus quasi, id quaerat! Odio ipsa veniam
+                    officiis reprehenderit unde!</p>
+            </div>
+            <!-- col end -->
+            <!-- col -->
+            <div class="col">
+                <h3>2nd col</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta nisi eligendi suscipit cum dolorum
+                    vel ducimus nesciunt molestiae, nihil reprehenderit accusamus quasi, id quaerat! Odio ipsa veniam
+                    officiis reprehenderit unde!</p>
+            </div>
+            <!-- col end -->
+            <!-- col -->
+            <div class="col">
+                <h3>3rd col</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta nisi eligendi suscipit cum dolorum
+                    vel ducimus nesciunt molestiae, nihil reprehenderit accusamus quasi, id quaerat! Odio ipsa veniam
+                    officiis reprehenderit unde!</p>
+            </div>
+            <!-- col end -->
+        </div>
+        <!-- row end -->
+    </section>
+</body>
+
+</html>

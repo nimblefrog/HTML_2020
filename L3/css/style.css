@@ -1,0 +1,67 @@
+/* 在此撰寫此專案的CSS Style */
+
+.highlight {
+    background: steelblue;
+    font-weight: 900;
+    font-size: 8px;
+    color: white;
+    padding: 4px 18px;
+    border-radius: 20px;
+}
+
+
+table,
+td,
+th {
+    /* 多粗 實線/虛線 顏色 */
+    border: 1px solid black;
+    /* 把表格裡面的border整合在一起 */
+    border-collapse: collapse;
+}
+
+td,
+th {
+    padding: 5px 10px;
+}
+
+th {
+    background: rgb(209, 202, 202);
+}
+
+.price {
+    text-align: right;
+}
+
+
+.price:before {
+    content: "$ ";
+}
+
+.price:after {
+    content: " NTD";
+}
+
+.form-box {
+    width: 400px;
+    padding: 20px 20px;
+    box-shadow: 0 10px 30px rgb(0, 0, 0, 0.4);
+    border-radius: 6px;
+}
+
+.form-control {
+    /* 設定此元素變成區塊元素 */
+    display: block;
+    width: 100%;
+    padding: 4px 8px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(126, 123, 123);
+    border-radius: 4px;
+}
+
+.submit-btn {
+    background: tomato;
+    color: white;
+    /* 取消元素原本的border */
+    border: none;
+    padding: 4px 10px;
+}

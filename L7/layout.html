@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 4 網格系統</title>
+    <!-- https://getbootstrap.com -->
+    <!-- 引用Bootstrap的CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- 引用Bootstrap的JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+    </script>
+</head>
+
+<body>
+    <!-- jumbotron bootstrap 幫你設計好的header元件 -->
+    <header class="jumbotron bg-dark text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-6 text-center">
+                    <h1 class="mb-3">Header</h1>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim, voluptates atque? Quae ducimus
+                        consectetur quod ea et magnam, maxime vel distinctio, sed asperiores quidem earum?</p>
+                    <div>
+                        <a class="btn btn-sm btn-success" href="">超連結1</a>
+                        <a class="btn btn-lg btn-outline-warning" href="">超連結2</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- 用網格排版的必要規則 .row包住.col-->
+    <!-- container || container-fluid -->
+    <div class="container-fluid">
+        <!-- row -->
+        <!-- row 加上 no-gutters裡面的col都不會有預設的padding留白 -->
+        <div class="row">
+            <!-- col -->
+            <div class="col-md-3 col-sm-6 col-6">
+                <h3 class="text-primary text-center">第1個col</h3>
+                <!-- class="w-100" 表示width="100%" -->
+                <!-- mt-3 mb-3 設定數字一樣的話 可以寫成my-3 -->
+                <img class="w-100 mt-3 mb-3" src="https://picsum.photos/600/400?imge=1070" alt="">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia quod, at asperiores quo suscipit fugit
+                    velit magnam, obcaecati quaerat vel hic, nisi modi voluptatibus et?</p>
+            </div>
+            <!-- col end -->
+            <!-- col -->
+            <div class="col-md-3 col-sm-6 col-6">
+                <h3 class="text-primary text-center">第2個col</h3>
+                <img class="w-100 mt-3 mb-3" src="https://picsum.photos/600/400?imge=1071" alt="">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia quod, at asperiores quo suscipit fugit
+                    velit magnam, obcaecati quaerat vel hic, nisi modi voluptatibus et?</p>
+            </div>
+            <!-- col end -->
+            <!-- col -->
+            <div class="col-md-3 col-sm-6">
+                <h3 class="text-primary text-center">第3個col</h3>
+                <img class="w-100 mt-3 mb-3" src="https://picsum.photos/600/400?imge=1072" alt="">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia quod, at asperiores quo suscipit fugit
+                    velit magnam, obcaecati quaerat vel hic, nisi modi voluptatibus et?</p>
+            </div>
+            <!-- col end -->
+            <!-- col -->
+            <div class="col-md-3 col-sm-6">
+                <h3 class="text-primary text-center">第4個col</h3>
+                <img class="w-100 mt-3 mb-3" src="https://picsum.photos/600/400?imge=1073" alt="">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia quod, at asperiores quo suscipit fugit
+                    velit magnam, obcaecati quaerat vel hic, nisi modi voluptatibus et?</p>
+            </div>
+            <!-- col end -->
+        </div>
+        <!-- row end -->
+
+        <!-- row -->
+        <div class="row justify-content-center">
+            <!-- col -->
+            <div class="col-md-3">
+                <h4>Left</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ducimus minus veniam recusandae
+                    quasi dignissimos. Quam saepe amet aliquam distinctio quia unde voluptatem nemo impedit.</p>
+            </div>
+            <!-- col-end -->
+            <!-- col -->
+            <div class="col-md-3">
+                <h4>Right</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ducimus minus veniam recusandae
+                    quasi dignissimos. Quam saepe amet aliquam distinctio quia unde voluptatem nemo impedit.</p>
+            </div>
+            <!-- col-end -->
+        </div>
+        <!-- row end -->
+    </div>
+    <!-- container end -->
+</body>
+
+</html>

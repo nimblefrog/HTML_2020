@@ -1,0 +1,42 @@
+//scss 註解
+//變數
+$primary: blue;
+$secondary: steelblue;
+
+//所有css的規則都可以在scss的檔案裏面使用
+
+// 建立一個混合器 mixin
+@mixin drawBox($w, $h, $color) {
+    width: $w;
+    height: $h;
+    background: $color;
+    border: 1px solid darken($color, 15%);
+}
+
+// scss nesting
+.box {
+    // width: 100px;
+    // height: 100px;
+    // background: $primary;
+    // 使用drawBox混合器
+    @include drawBox(300px, 200px, $primary);
+
+    // &代表.box
+    &:hover {
+        //darken (顏色, 10%) 變深10%
+        //lighten(顏色, 15%) 變淺15%
+        background: darken($primary, 10%);
+    }
+
+    &:active {
+        background: lighten($primary, 10%);
+    }
+}
+
+a {
+    color: $secondary;
+}
+
+.navbar {
+    @include drawBox(100%, 50px, $secondary);
+}

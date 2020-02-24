@@ -1,0 +1,34 @@
+/*CSS 註解*/
+/* 在CSS檔案裏面跟設定無關的一定要註解 */
+/* CSS選擇器 */
+
+
+/*透過分類要選擇class，要用 .*/
+.important-title {
+    color: red;
+    background: yellow;
+    text-decoration: underline;
+}
+
+.text-center{
+    /* 文字置中 */
+    text-align: center;
+}
+
+.text-right{
+    /* 文字靠右 */
+    text-align: right;
+}
+
+.rounded{
+    /* 設定圓角 */
+    border-radius: 20px;
+}
+
+h2 {
+    color: blue;
+}
+
+h3 {
+    color: rgb(102, 153, 102);
+}
