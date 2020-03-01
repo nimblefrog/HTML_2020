@@ -13,6 +13,13 @@ $secondary: steelblue;
     border: 1px solid darken($color, 15%);
 }
 
+@mixin fixedTop($l, $t) {
+    position: fixed;
+    left: $l;
+    top: $t;
+    z-index: 1000;
+}
+
 // scss nesting
 .box {
     // width: 100px;
@@ -20,6 +27,7 @@ $secondary: steelblue;
     // background: $primary;
     // 使用drawBox混合器
     @include drawBox(300px, 200px, $primary);
+    @include fixedTop(0px, 50px);
 
     // &代表.box
     &:hover {

@@ -2,7 +2,11 @@
   width: 300px;
   height: 200px;
   background: blue;
-  border: 1px solid #0000b3; }
+  border: 1px solid #0000b3;
+  position: fixed;
+  left: 0px;
+  top: 50px;
+  z-index: 1000; }
   .box:hover {
     background: #0000cc; }
   .box:active {
